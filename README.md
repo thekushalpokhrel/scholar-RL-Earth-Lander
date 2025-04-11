@@ -1,169 +1,126 @@
 # Earth Lander Simulation
 
-## Contact: Kushal Pokhrel (k.pokhrel@aih.edu.au)
+A custom OpenAI Gym environment simulating a drone landing on Earth with dynamic wind conditions and randomized landing targets. Built with reinforcement learning experimentation in mind.
+---
 
-### Australian Institute of Higher Education
+## ✍️ Author
+**Kushal Pokhrel**  
+Australian Institute of Higher Education_  
+📧 Personal: thekushalpokhrel@gmail.com  
+📧 Professional: k.pokhrel@aih.edu.au
+---
 
-### Project is under development - feel free to use the code for experimental and research purposes
+## 🔒 License & Usage Restrictions
 
-A custom OpenAI Gym environment simulating a drone landing on Earth with realistic wind effects and dynamic landing targets.
+This project is **licensed for academic and experimental use only**.  
+**Commercial usage, redistribution, or modification for profit is strictly prohibited.**
 
-## Features
+> © 2025 Kushal Pokhrel. All rights reserved.
 
-- 🌍 Earth-like environment with beach, ocean, and sky visuals
-- 🚁 Drone-style lander with realistic physics
-- 💨 Constant 10 m/s wind with random direction changes
-- 🎯 Randomly generated landing targets each episode
-- 🏗️ Custom-built using Pygame for rendering
-- 🤖 Compatible with reinforcement learning algorithms
+To request special permissions or collaboration, please contact: k.pokhrel@aih.edu.au
 
-## Installation
+---
 
-1. Clone the repository:
+## 🚀 Features
+- 🌍 Earth-inspired environment with beach, ocean, and sky visuals
+- 🚁 Realistic drone-style lander physics
+- 💨 Simulated [10-20] m/s wind with dynamic direction shifts
+- 🎯 Randomized landing pads per episode
+- 🕹️ Manual and automated control support
+- 🤖 Fully compatible with reinforcement learning algorithms
+- 🧪 Customizable environment parameters for experimentation
+---
+
+## 📦 Installation
+
+1. **Clone the repository**:
+   ```bash
    git clone https://github.com/kushalpokhrel/earth_lander_sim.git
-   cd earth_lander
+   cd earth_lander_sim
    Install dependencies:
-
+   ```
 pip install -r requirements.txt
 Install the package in development mode:
-
 pip install -e .
-Usage
-Training the Agent
-To train a reinforcement learning agent:
+
+🧠 Usage
+➤ Training an Agent
 
 python -m earth_lander.training.train
-Training progress will be saved in:
+Progress is saved to:
+training/metrics/ – Logs and metrics
+models/ – Model checkpoints
 
-training/metrics/ - Training logs and metrics
+➤ Evaluating a Trained Model
+python -m earth_lander.training.evaluate --model_path models/earth_lander_final.keras
 
-models/ - Saved model checkpoints
-
-Evaluating a Trained Model
-To evaluate a trained model:
-
-python -m earth_lander.training.evaluate --model_path models/earth_lander_final.h5
-Manual Control (Development)
-For testing the environment manually:
-
+➤ Manual Control (for testing)
 import gymnasium as gym
 import earth_lander
 
 env = gym.make('EarthLander-v2', render*mode="human")
-observation, * = env.reset()
+obs, * = env.reset()
 
-for \_ in range(1000):
-action = env.action_space.sample() # Random actions
-observation, reward, terminated, truncated, info = env.step(action)
-
-    if terminated or truncated:
-        observation, _ = env.reset()
-
+for _ in range(1000):
+action = env.action_space.sample()
+obs, reward, terminated, truncated, info = env.step(action)
+if terminated or truncated:
+obs, _ = env.reset()
 env.close()
-Environment Details
-Action Space
-The action space is a Box(3,) representing:
 
-[0]: Left thruster power (0 to 1)
+🔧 Environment Details
 
-[1]: Right thruster power (0 to 1)
+Action Space: Box(3,)
+[0]: Left thruster power (0.0 to 1.0)
+[1]: Right thruster power (0.0 to 1.0)
+[2]: Bottom thruster power (0.0 to 1.0)
 
-[2]: Bottom thruster power (0 to 1)
-
-Observation Space
-The observation space is a Box(9,) representing:
-
+Observation Space: Box(9,0)
 [0]: X position
-
 [1]: Y position
-
 [2]: X velocity
-
 [3]: Y velocity
-
 [4]: Angle "radians"
-
 [5]: Angular velocity
-
-[6]: Left ground contact (boolean)
-
-[7]: Right ground contact (boolean)
-
+[6]: Left ground contact (bool)
+[7]: Right ground contact (bool)
 [8]: Remaining fuel
 
-Rewards
-The reward function considers:
+Reward Structure
+✅ Landing on pad: +100
+💥 Crash: -100
+📉 Penalties for distance, velocity, and tilt
 
-Successful landing on pad: +100
+⛽ Bonus for fuel conservation
 
-Crash: -100
-
-Distance to landing pad
-
-Velocity penalties
-
-Angle penalties
-
-Fuel remaining bonus
-
-Customization
-You can modify environment parameters by creating a custom instance:
-
+🛠️ Customization
 from earth_lander.envs.earth_lander_env import EarthLanderEnv
 
 env = EarthLanderEnv(
-gravity=9.81, # m/s²
-wind_speed=10.0, # m/s
-initial_fuel=100.0, # units
-max_thrust=15.0, # N
-render_mode="human" # None, "human", or "rgb_array"
+gravity=9.81,
+wind_speed=10.0,
+initial_fuel=100.0,
+max_thrust=15.0,
+render_mode="human"
 )
-Project Structure
 
-# Earth Lander Project - File Structure
-
+🗂️ Project Structure
 earth_lander/
 ├── earth_lander/
-│ ├── **init**.py
-│ ├── envs/
-│ │ ├── **init**.py
-│ │ └── earth_lander_env.py
-│ ├── utils/
-│ │ ├── **init**.py
-│ │ └── helpers.py
-│ └── training/
-│ ├── **init**.py
-│ ├── train.py # Updated with evaluation fix
-│ └── evaluate.py # Evaluation script
-├── tests/
-│ ├── **init**.py
-│ └── test_environment.py
-├── docs/
-│ ├── README.md
-│ └── earth_lander_demo.gif
-├── models/ # Model checkpoints
-│ ├── earth_lander_episode_100.keras
-│ └── earth_lander_final.keras
-├── training/
-│ └── metrics/
-│ └── EarthLander_Training.log
+│ ├── envs/ # Environment definitions
+│ ├── utils/ # Helper functions
+│ └── training/ # Training and evaluation scripts
+├── tests/ # Unit tests
+├── docs/ # Documentation and demo media
+├── models/ # Saved models
+├── training/metrics/ # Training logs
 ├── manual_play.py # Manual testing script
 ├── requirements.txt
 ├── setup.py
 └── .gitignore
 
-Contributing
-Contributions are welcome! Please open an issue or submit a pull request.
+🤝 Contributions
+Contributions are welcome! Please open an issue or pull request for bug fixes, improvements, or new features.
 
-License
-This project is licensed under the MIT License
-
-# Author: Kushal Pokhrel (Australian Institute of Higher Education)
-
-### Additional Recommendations:
-
-1. The README provides:
-   - Installation instructions
-   - Usage examples
-   - Environment documentation
-   - Project structure overview
+📜 Disclaimer
+This project is provided "as-is" for academic, educational, and non-commercial experimentation purposes only. The author makes no guarantees of fitness for any purpose. Use at your own risk.
