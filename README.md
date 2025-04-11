@@ -1,10 +1,14 @@
 # Earth Lander Simulation
 
-A custom OpenAI Gym environment simulating a drone landing on Earth with dynamic wind conditions and randomized landing targets. Built with reinforcement learning experimentation in mind.
+A custom-built OpenAI Gym environment simulating a drone landing on Earth with dynamic wind conditions and randomized landing targets. Built with reinforcement learning experimentation in mind. This project was inspired by the Lunar Lander project from OpenAI GYM [https://www.gymlibrary.dev/environments/box2d/lunar_lander/].
 
 ---
 
-## ✍️ Project Author 1
+## ✍️ Project Authors
+
+---
+
+## ✍️ Author 1:
 
 **Kushal Pokhrel**  
 *Australian Institute of Higher Education*  
@@ -13,11 +17,9 @@ A custom OpenAI Gym environment simulating a drone landing on Earth with dynamic
 
 ---
 
----
+## ✍️ Author 2
 
-## ✍️ Project Author 2
-
-**Kushal Pokhrel**  
+**Prof. Cesar Sanin**  
 *Australian Institute of Higher Education* 
 📧 Professional: c.sanin@aih.edu.au  
 
