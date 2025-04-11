@@ -4,7 +4,7 @@ A custom OpenAI Gym environment simulating a drone landing on Earth with dynamic
 
 ---
 
-## ✍️ Project Author
+## ✍️ Project Author 1
 
 **Kushal Pokhrel**  
 *Australian Institute of Higher Education*  
@@ -13,11 +13,13 @@ A custom OpenAI Gym environment simulating a drone landing on Earth with dynamic
 
 ---
 
-## ✍️ Project Supervisor
+---
 
-**Prof. Cesar Sanin**
-*Australian Institute of Higher Education*
-📧 Professional: c.sanin@aih.edu.au 
+## ✍️ Project Author 2
+
+**Kushal Pokhrel**  
+*Australian Institute of Higher Education* 
+📧 Professional: c.sanin@aih.edu.au  
 
 ---
 
