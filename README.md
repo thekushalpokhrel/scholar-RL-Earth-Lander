@@ -18,7 +18,7 @@ A custom OpenAI Gym environment simulating a drone landing on Earth with dynamic
 This project is **licensed for academic and experimental use only**.  
 **Commercial usage, redistribution, or modification for profit is strictly prohibited.**
 
-> © 2025 Kushal Pokhrel && Australian Institute of Higher Education, Sydney Australia . All rights reserved.
+> © 2025 Kushal Pokhrel | Australian Institute of Higher Education . All rights reserved.
 
 To request special permissions or collaboration, please contact: k.pokhrel@aih.edu.au
 
