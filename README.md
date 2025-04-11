@@ -34,6 +34,8 @@ To request special permissions or collaboration, please contact: k.pokhrel@aih.e
 - 🤖 Fully compatible with reinforcement learning algorithms
 - 🧪 Customizable environment parameters for experimentation
 
+![Training Progress](docs/training-image.png)
+![Training Progress](docs/training-image-2.png)
 ---
 
 ## 📦 Installation
