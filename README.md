@@ -156,16 +156,14 @@ Contributing
 Contributions are welcome! Please open an issue or submit a pull request.
 
 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License
 
-Copy
+# Author: Kushal Pokhrel (Australian Institute of Higher Education)
 
 ### Additional Recommendations:
 
-1. Add a `LICENSE` file (MIT License recommended for open source projects)
-
-2. The README provides:
-   - Clear installation instructions
+1. The README provides:
+   - Installation instructions
    - Usage examples
    - Environment documentation
    - Project structure overview
