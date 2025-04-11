@@ -20,10 +20,11 @@ A custom-built OpenAI Gym environment simulating a drone landing on Earth with d
 ## ✍️ Author 2
 
 **Prof. Cesar Sanin**  
-*Australian Institute of Higher Education* 
+*Australian Institute of Higher Education*  
 📧 Professional: c.sanin@aih.edu.au  
 
 ---
+
 
 ## 🔒 License & Usage Restrictions
 
